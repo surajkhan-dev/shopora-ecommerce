@@ -41,7 +41,7 @@ const Header = ({ cartCount, setCurrentPage, searchTerm, setSearchTerm }) => {
           Home
         </a>
         <button
-          onClick={()=> setCurrentPage("shop")}
+          onClick={()=> setCurrentPage("products")}
           className="hover:text-[#2dd4bf] transition-colors duration-200"
         >
           Shop
