@@ -11,7 +11,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 
 const App = () => {
-  const [currentPage, setCurrentPage] = useState("register");
+  const [currentPage, setCurrentPage] = useState("home");
   const [cartItem, setCartItem] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
