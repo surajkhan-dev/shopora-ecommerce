@@ -49,9 +49,15 @@ const Footer = ({ setCurrentPage }) => {
           <h2 className="text-lg font-bold mb-4">Customer Support</h2>
 
           <div className="flex flex-col items-start gap-3">
-            <button className="text-gray-300 text-sm hover:text-[#2dd4bf] transition-colors duration-200 cursor-pointer">Contact Us</button>
-            <button className="text-gray-300 text-sm hover:text-[#2dd4bf] transition-colors duration-200 cursor-pointer">FAQs</button>
-            <button className="text-gray-300 text-sm hover:text-[#2dd4bf] transition-colors duration-200 cursor-pointer">Privacy Policy</button>
+            <button className="text-gray-300 text-sm hover:text-[#2dd4bf] transition-colors duration-200 cursor-pointer">
+              Contact Us
+            </button>
+            <button className="text-gray-300 text-sm hover:text-[#2dd4bf] transition-colors duration-200 cursor-pointer">
+              FAQs
+            </button>
+            <button className="text-gray-300 text-sm hover:text-[#2dd4bf] transition-colors duration-200 cursor-pointer">
+              Privacy Policy
+            </button>
           </div>
         </div>
         {/* Social Media */}
@@ -67,6 +73,10 @@ const Footer = ({ setCurrentPage }) => {
       <div className="border-t border-gray-600 mt-10 pt-6 text-center">
         <p className="text-gray-300 text-sm leading-7">
           © {new Date().getFullYear()} Shopora. All rights reserved.
+        </p>
+        <p className="text-gray-400 text-xs mt-2">
+          Designed & Developed by{" "}
+          <span className="text-white font-semibold">Suraj Khan</span>
         </p>
       </div>
     </footer>
