@@ -53,39 +53,27 @@ const Cart = ({ cartItem, handleIncrease, handleDecrease, handleRemove }) => {
 
       {
       cartItem.map((item) => (
-        <div
-          key={item.id}
-          className="bg-white rounded-2xl shadow-md p-5 border border-slate-200 mb-4 grid  grid-cols-1 md:grid-cols-[2fr_1fr_1fr_2fr_1fr] items-center  gap-4
-          hover:shadow-lg transition-shadow duration-300          "
+        <div key={item.id}
+        className="bg-white rounded-2xl border border-slate-200 p-5 mb-4 shadow-sm hover:shadow-md transition duration-200"
         >
-          <h2 className="text-lg font-semibold text-gray-800">
-            {item.name}
-          </h2>
-          <p className="text-gray-600  font-semibold text-sm">Price: ₹{item.price}</p>
-          <p className="text-gray-600 font-medium text-sm">Quantity: {item.quantity}</p>
 
-          <div className="flex items-center gap-2">
-            <button
-              onClick={() => handleIncrease(item.id)}
-              className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
-            >
-              +
-            </button>
-            <button
-              onClick={() => handleDecrease(item.id)}
-              className="bg-gray-200 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-300"
-            >
-              -
-            </button>
-            <button
-              onClick={() => handleRemove(item.id)}
-              className="bg-red-200 text-red-600 px-4 py-2 rounded-lg hover:bg-red-600 hover:text-white transition duration-200"
-            >
-              Remove
-            </button>
+          {/* Product Details */}
+          <div className="flex flex-col sm:flex-row items-center gap-5">
+            {/* Product Image */}
+            <div className="w-28 h-28 bg-slate-50 rounded-xl p-3">
+              <img src={item.image} alt={item.name} 
+              className="w-full h-full object-contain"/>
+            </div>
+            {/* Product Info */}
+            <div className="flex-1 text-center sm:text-left">
+              <h2 className="text-lg font-semibold text-slate-800">{item.name}</h2>
+              <p className="text-sm text-slate-500 mt-1">{item.category}</p>
+              <p className="text-base font-medium text-slate-700">₹{item.price}</p>
+            </div>
           </div>
-          <p className="text-blue-700 font-bold text-right">Product Total: ₹{item.price * item.quantity}</p>
+
         </div>
+        
       ))}
       {cartItem.length > 0 && (
         <div className="mt-8 bg-slate-900 rounded-2xl p-6 flex gap-4 justify-between items-center shadow-lg">
