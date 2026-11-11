@@ -3,7 +3,7 @@ const ProductDetails = ({ product, handleAddToCart, setCurrentPage }) => {
     return null;
   }
 
-  console.log("Selected Product:", product)
+  
 
   return (
     <div className="bg-gray-50 min-h-screen px-8 py-16">
@@ -12,7 +12,7 @@ const ProductDetails = ({ product, handleAddToCart, setCurrentPage }) => {
           <img
             src={product.image}
             alt={product.name}
-            className="w-full h-[400px] object-contain"
+            className="w-full h-[300px] object-contain md:h-[450px]"
           />
         </div>
         {/* Product Info */}
