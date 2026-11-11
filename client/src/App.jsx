@@ -94,6 +94,7 @@ const App = () => {
         <Home
           onCategorySelect={handleCategorySelect}
           handleAddToCart={handleAddToCart}
+          handleViewDetails={handleViewDetails}
         />
       ) : currentPage === "products" ? (
         <Products
