@@ -67,7 +67,7 @@ const App = () => {
     setCurrentPage("products");
   };
 
-  const handleClearFiletrs = () => {
+  const handleClearFilters  = () => {
     setSearchTerm("");
     setSelectedCategory("All");
   };
@@ -95,7 +95,7 @@ const App = () => {
           searchTerm={searchTerm}
           selectedCategory={selectedCategory}
           onCategorySelect={handleCategorySelect}
-          onClearFilter={handleClearFiletrs}
+          onClearFilter={handleClearFilters}
         />
       ) : currentPage === "about" ? (
         <About setCurrentPage={setCurrentPage} />
