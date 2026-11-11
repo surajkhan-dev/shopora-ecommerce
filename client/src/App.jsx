@@ -20,7 +20,7 @@ const App = () => {
 
   const isAuthPage = currentPage === "login" || currentPage === "register";
 
-  const handleAddToCart = (product) => {
+  const handleAddToCart = (product, quantity = 1) => {
     setCartItem((previousItems) => {
       const isProductExist = previousItems.some(
         (item) => item.id === product.id,
@@ -29,12 +29,12 @@ const App = () => {
       if (isProductExist) {
         return previousItems.map((item) =>
           item.id === product.id
-            ? { ...item, quantity: item.quantity + 1 }
+            ? { ...item, quantity: item.quantity + quantity  }
             : item,
         );
       }
 
-      return [...previousItems, { ...product, quantity: 1 }];
+      return [...previousItems, { ...product, quantity }];
     });
   };
 
