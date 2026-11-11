@@ -23,7 +23,7 @@ const ProductCard = ({id, name, price, image, handleAddToCart}) => {
         className="w-full h-full  object-contain p-3 transition-transform duration-300 group-hover:scale-105"
       />
       </div>
-      <button>View details</button>
+      <button className="w-full border border-[#14213d] text-[#14213d] py-2.5 rounded-xl hover:bg-gray-100 transition-colors">View details</button>
       <h3 className=" font-semibold text-base text-gray-800 mt-4 line-clamp-2 min-h-12">{name}</h3>
       <p className="text-[#14213d] text-xl font-bold mt-2 mb-4">₹{price}</p>
       <button onClick={handleClick}
