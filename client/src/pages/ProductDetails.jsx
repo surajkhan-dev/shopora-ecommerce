@@ -34,9 +34,7 @@ const ProductDetails = ({ product, handleAddToCart, setCurrentPage }) => {
           </p>
           <p className="text-2xl font-bold text-[#14213d]">₹{product.price}</p>
           <div className="space-y-2">
-            <p className="text-sm font-medium text-gray-700">
-              Quantity
-            </p>
+            <p className="text-sm font-medium text-gray-700">Quantity</p>
             <div className="flex items-center border border-gray-300 rounded-xl w-fit overflow-hidden">
               <button
                 onClick={decrease}
@@ -56,13 +54,13 @@ const ProductDetails = ({ product, handleAddToCart, setCurrentPage }) => {
           </div>
           <button
             onClick={() => handleAddToCart(product, quantity)}
-            className="bg-[#14213d] text-white px-6 py-3 rounded-xl hover:bg-teal-500 transition-colors"
+            className="bg-[#14213d] text-white w-full flex items-center justify-center gap-2 px-6 py-3 font-semibold rounded-xl hover:bg-teal-500 active:scale-[0.98] transition-all duration-200"
           >
             + Add to Cart
           </button>
           <button
             onClick={() => setCurrentPage("products")}
-            className="border border-[#14213d] px-5 py-3 rounded-xl hover:bg-[#14213d] hover:text-white transition-colors"
+            className="font-semibold border border-[#14213d] px-5 py-3 rounded-xl hover:bg-[#14213d] hover:text-white w-full active:scale-[0.98] transition-all duration-200"
           >
             ← Back to Products
           </button>
