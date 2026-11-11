@@ -8,6 +8,7 @@ const Products = ({
   selectedCategory,
   onCategorySelect,
   onClearFilter,
+  handleViewDetails
 }) => {
   const [sortOption, setSortOption] = useState("default");
 
@@ -98,6 +99,7 @@ const Products = ({
           <ProductGrid
             products={sortedProducts}
             handleAddToCart={handleAddToCart}
+            handleViewDetails={handleViewDetails}
           />
         ) : (
           <div className="flex flex-col items-center justify-center py-20 text-center">

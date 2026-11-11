@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import Contact from "./pages/Contact";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import ProductDetails from "./pages/ProductDetails";
 
 const App = () => {
   const [currentPage, setCurrentPage] = useState("home");
@@ -73,10 +74,10 @@ const App = () => {
     setSelectedCategory("All");
   };
 
-  const handleViewDetails = (product) =>{
-    setSelectedProduct(product)
-    setCurrentPage("product-details")
-  }
+  const handleViewDetails = (product) => {
+    setSelectedProduct(product);
+    setCurrentPage("product-details");
+  };
 
   return (
     <div>
@@ -102,6 +103,7 @@ const App = () => {
           selectedCategory={selectedCategory}
           onCategorySelect={handleCategorySelect}
           onClearFilter={handleClearFilters}
+          handleViewDetails={handleViewDetails}
         />
       ) : currentPage === "about" ? (
         <About setCurrentPage={setCurrentPage} />
@@ -111,14 +113,20 @@ const App = () => {
         <Register setCurrentPage={setCurrentPage} />
       ) : currentPage === "login" ? (
         <Login setCurrentPage={setCurrentPage} />
-      ) : (
+      ) : currentPage === "product-details" && selectedProduct ? (
+        <ProductDetails
+          product={selectedProduct}
+          handleAddToCart={handleAddToCart}
+          setCurrentPage={setCurrentPage}
+        />
+      ) : currentPage === "cart" ? (
         <Cart
           cartItem={cartItem}
           handleIncrease={handleIncrease}
           handleDecrease={handleDecrease}
           handleRemove={handleRemove}
         />
-      )}
+      ) : null}
       {!isAuthPage && <Footer setCurrentPage={setCurrentPage} />}
     </div>
   );
