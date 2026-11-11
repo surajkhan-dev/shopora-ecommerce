@@ -73,10 +73,10 @@ const Cart = ({ cartItem, handleIncrease, handleDecrease, handleRemove }) => {
                 ₹{item.price}
               </p>
 
-              <div className="flex items-center justify-center sm:justify-start gap-3 mt-4">
+              <div className="flex items-center gap-3 mt-4">
                 <button
                   onClick={() => handleDecrease(item.id)}
-                  className="w-9 h-9 flex items-center rounded-lg border border-slate-300 bg-slate-100 text-slate-800 hover:bg-slate-200 font-bold"
+                  className="w-9 h-9 flex items-center rounded-lg border border-slate-300 bg-slate-100 text-slate-800 hover:bg-slate-200 font-bold justify-center"
                 >
                   -
                 </button>
@@ -89,7 +89,9 @@ const Cart = ({ cartItem, handleIncrease, handleDecrease, handleRemove }) => {
                 >
                   +
                 </button>
+
               </div>
+              <button onClick={()=> handleRemove(item.id)} className="mt-3 px-4 bg-red-600 text-white rounded-lg hover:bg-red-700 transition">Remove</button>
             </div>
           </div>
         </div>
