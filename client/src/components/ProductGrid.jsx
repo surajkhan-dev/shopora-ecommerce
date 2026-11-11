@@ -11,6 +11,7 @@ const ProductGrid = ({ products, handleAddToCart }) => {
             price = {product.price}
             image = {product.image}
             handleAddToCart = {handleAddToCart}
+            
           />
         );
       })}

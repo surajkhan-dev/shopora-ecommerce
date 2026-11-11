@@ -4,7 +4,7 @@ import ProductGrid from "../components/ProductGrid";
 import products from "../data/products";
 
 
-const Home = ({ handleAddToCart,onCategorySelect }) => {
+const Home = ({ handleAddToCart,onCategorySelect, handleViewDetails }) => {
   return (
     <>
       <section className="bg-white py-16 px-8">
@@ -57,6 +57,7 @@ const Home = ({ handleAddToCart,onCategorySelect }) => {
           <ProductGrid 
           products={products}
           handleAddToCart={handleAddToCart}
+          handleViewDetails={handleViewDetails}
           />
         </div>
       </section>

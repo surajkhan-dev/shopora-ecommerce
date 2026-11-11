@@ -15,6 +15,7 @@ const App = () => {
   const [cartItem, setCartItem] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
   const isAuthPage = currentPage === "login" || currentPage === "register";
 
@@ -67,10 +68,15 @@ const App = () => {
     setCurrentPage("products");
   };
 
-  const handleClearFilters  = () => {
+  const handleClearFilters = () => {
     setSearchTerm("");
     setSelectedCategory("All");
   };
+
+  const handleViewDetails = (product) =>{
+    setSelectedProduct(product)
+    setCurrentPage("product-details")
+  }
 
   return (
     <div>

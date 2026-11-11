@@ -7,11 +7,10 @@ const Login = ({ setCurrentPage }) => {
     e.preventDefault();
 
     console.log("Login form submitted");
-    console.log({ email, password });
 
     if (email.includes("@") && password.length >= 6)
       setMessage("Login Successfully");
-    else setMessage("error");
+    else setMessage("Invalid email or password");
   };
 
   const [email, setEmail] = useState("");
@@ -45,6 +44,7 @@ const Login = ({ setCurrentPage }) => {
             autoComplete="current-password"
             onChange={(e) => setPassword(e.target.value)}
             required
+            minLength={6}
             placeholder="Enter your password"
             className="w-full pr-10  border border-gray-300 rounded-lg p-3  focus:outline-none focus:ring-2 focus:ring-[#2dd4bf]"
           />
@@ -52,6 +52,7 @@ const Login = ({ setCurrentPage }) => {
             type="button"
             className="absolute right-3 top-[42px] "
             onClick={() => setShowPassword(!showPassword)}
+            aria-label={showPassword ? "Hide password" : "Show password"}
           >
             {showPassword ? <EyeOff /> : <Eye />}
           </button>
@@ -68,7 +69,7 @@ const Login = ({ setCurrentPage }) => {
         </div>
         {message && (
           <p
-            className={`  ${message === "Login Successfully" ? "text-green-600" : "text-red-600"}`}
+            className={` mt-4 text-center text-sm  ${message === "Login Successfully" ? "text-green-600" : "text-red-600"}`}
           >
             {message}
           </p>
@@ -84,7 +85,7 @@ const Login = ({ setCurrentPage }) => {
           Don't have an account?{" "}
           <button
             type="button"
-            onClick={()=> setCurrentPage("register")}
+            onClick={() => setCurrentPage("register")}
             className="text-[#14213d] font-semibold hover:text-[#2dd4bf]"
           >
             Create Account
